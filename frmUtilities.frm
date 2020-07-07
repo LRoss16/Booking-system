@@ -1,110 +1,109 @@
 VERSION 5.00
 Begin VB.Form frmUtilities 
-   Caption         =   "Lewis' Football-Utilities"
-   ClientHeight    =   7515
+   ClientHeight    =   7110
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   8100
+   ClientWidth     =   8025
    LinkTopic       =   "Form1"
-   ScaleHeight     =   7515
-   ScaleWidth      =   8100
+   ScaleHeight     =   7110
+   ScaleWidth      =   8025
    StartUpPosition =   3  'Windows Default
+   Begin VB.Frame fraCosts 
+      Height          =   1095
+      Left            =   600
+      TabIndex        =   6
+      Top             =   4200
+      Visible         =   0   'False
+      Width           =   4575
+      Begin VB.TextBox txtJuniorCost 
+         Height          =   375
+         Left            =   3240
+         TabIndex        =   8
+         Top             =   240
+         Width           =   1095
+      End
+      Begin VB.TextBox txtSeniorCost 
+         Height          =   375
+         Left            =   1080
+         TabIndex        =   7
+         Top             =   240
+         Width           =   975
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Junior Rate"
+         Height          =   375
+         Left            =   2280
+         TabIndex        =   10
+         Top             =   240
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Senior Rate"
+         Height          =   495
+         Left            =   120
+         TabIndex        =   9
+         Top             =   360
+         Width           =   855
+      End
+   End
    Begin VB.CommandButton cmdOK 
       Caption         =   "OK"
       Height          =   855
-      Left            =   2520
-      TabIndex        =   11
-      Top             =   6240
+      Left            =   2640
+      TabIndex        =   5
+      Top             =   6000
       Width           =   2055
    End
    Begin VB.Frame Frame1 
       Height          =   5175
-      Left            =   600
+      Left            =   360
       TabIndex        =   0
-      Top             =   600
+      Top             =   480
       Width           =   6855
-      Begin VB.Frame fraCosts 
-         Height          =   1095
-         Left            =   360
-         TabIndex        =   5
-         Top             =   3600
-         Visible         =   0   'False
-         Width           =   4575
-         Begin VB.TextBox txtJuniorCost 
-            Height          =   375
-            Left            =   3240
-            TabIndex        =   9
-            Top             =   240
-            Width           =   1095
-         End
-         Begin VB.TextBox txtSeniorCost 
-            Height          =   375
-            Left            =   1080
-            TabIndex        =   7
-            Top             =   240
-            Width           =   975
-         End
-         Begin VB.Label Label2 
-            Caption         =   "Junior Rate"
-            Height          =   375
-            Left            =   2280
-            TabIndex        =   8
-            Top             =   240
-            Width           =   975
-         End
-         Begin VB.Label Label1 
-            Caption         =   "Senior Rate"
-            Height          =   495
-            Left            =   120
-            TabIndex        =   6
-            Top             =   360
-            Width           =   855
-         End
-      End
       Begin VB.OptionButton optUtilities 
-         Caption         =   "Change cost of Games"
-         Height          =   375
-         Index           =   4
+         Caption         =   "Back up Current Games and Daily Games Files"
+         Height          =   615
+         Index           =   1
          Left            =   360
          TabIndex        =   4
-         Top             =   3000
-         Width           =   2295
-      End
-      Begin VB.OptionButton optUtilities 
-         Caption         =   "Create a new Current Games File"
-         Height          =   495
-         Index           =   3
-         Left            =   360
-         TabIndex        =   3
-         Top             =   2160
-         Width           =   2175
+         Top             =   360
+         Width           =   1695
       End
       Begin VB.OptionButton optUtilities 
          Caption         =   "Back up Members file"
          Height          =   615
          Index           =   2
          Left            =   360
-         TabIndex        =   2
+         TabIndex        =   3
          Top             =   1320
          Width           =   1935
       End
       Begin VB.OptionButton optUtilities 
-         Caption         =   "Back up Current Games and Daily Games Files"
-         Height          =   615
-         Index           =   1
+         Caption         =   "Create a new Current Games File"
+         Height          =   495
+         Index           =   3
+         Left            =   360
+         TabIndex        =   2
+         Top             =   2160
+         Width           =   2175
+      End
+      Begin VB.OptionButton optUtilities 
+         Caption         =   "Change cost of Games"
+         Height          =   375
+         Index           =   4
          Left            =   360
          TabIndex        =   1
-         Top             =   360
-         Width           =   1695
+         Top             =   3000
+         Width           =   2295
       End
       Begin VB.Label lblHelp 
          Caption         =   "Enter as pounds per hour eg 70, 60.5 etc"
          Height          =   735
-         Left            =   5160
-         TabIndex        =   10
+         Left            =   5040
+         TabIndex        =   11
          Top             =   3840
          Visible         =   0   'False
-         Width           =   1215
+         Width           =   1455
       End
    End
 End
@@ -114,8 +113,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdOK_Click()
-'This finds out which option has been selected and the relevant procedure is called by the program'
-
 Dim Index As Integer
 Dim OptionChoice As Integer 'Option button selected from 1 to 4
 For Index = 1 To 4 'Finds out which option has been selected'
@@ -123,39 +120,27 @@ If optUtilities(Index).Value = True Then 'This is true if the option has been se
 OptionChoice = Index
 End If
 Next Index
-
 Select Case OptionChoice
-
-Case1
-    Call BackupGamesFiles
-
-Case2
-    Call BackupMemberssFile
-
-Case3
-    Call CreateCurrentGamesFile
-
-Case4
-    Call ChangeCostOfGame
+ Case 1
+ Call BackupGamesFiles
+  Case 2
+  Call BackupMembersFile
+Case 3
+ Call CreateCurrentGamesFile
+Case 4
+Call ChangeCostOfGame
     
 End Select
-
 
 End Sub
 
 Private Sub optUtilities_Click(Index As Integer)
-
-If Index = 4 Then 'Is the option for changing the cost of a game selected?'
-
-fraCosts.Visible = True 'The frame with costs is made available with the option for changing the cost for Seniors and Juniors'
-
-lblHelp.Visible = True 'The label with the help for how costs should be entered is made visible'
-
+If Index = 4 Then
+fraCosts.Visible = True
+lblHelp.Visible = True
 End If
 
-
 End Sub
-
 Public Sub BackupGamesFiles() 'This uses the file copy statement to copy the two files into the floppy disk to back up the files'
 
 Dim Source1 As String
@@ -165,13 +150,13 @@ Dim Destination2 As String
 
 Source1 = App.Path & "\CurrentGames.dat"
 
-Destination1 = "a:\CurrentGames.dat"
+Destination1 = "E:\CurrentGames.dat"
 
 FileCopy Source1, Destination1
 
 Source2 = App.Path & "\DailyGames.dat"
 
-Destination2 = "a:\DailyGames.dat"
+Destination2 = "E:\DailyGames.dat"
 
 FileCopy Source2, Destination2
 
@@ -185,11 +170,12 @@ Dim Destination As String
 
 Source = App.Path & "\Members.dat"
 
-Destination = "a:\Members.dat"
+Destination = "E:\Members.dat"
 
 FileCopy Source, Destination
 
 End Sub
+
 
 Public Sub CreateCurrentGamesFile() 'This creates a current games file with one record for each pitch'
 

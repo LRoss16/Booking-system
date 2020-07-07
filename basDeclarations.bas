@@ -31,16 +31,14 @@ Public SeniorRate As Single
 Public JuniorRate As Single
 
 Public Sub Main()
-'Variables that can be accessed anywhere in the program'
-
 Dim FileName As String
 
 FileName = App.Path & "\Costs.txt"
+
 Open FileName For Input Access Read As #1
 Input #1, SeniorRate, JuniorRate
 Close #1
+
 frmMain.Show
 
 End Sub
-
-

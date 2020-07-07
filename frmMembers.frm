@@ -1,49 +1,24 @@
 VERSION 5.00
 Begin VB.Form frmMembers 
-   Caption         =   "Lewis' Football-Club Membership"
-   ClientHeight    =   8025
+   Caption         =   "Form1"
+   ClientHeight    =   7770
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   8610
+   ClientWidth     =   11745
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8025
-   ScaleWidth      =   8610
+   ScaleHeight     =   7770
+   ScaleWidth      =   11745
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton cmdPrintMembers 
-      Caption         =   "Print Membership List"
-      Enabled         =   0   'False
-      Height          =   735
-      Left            =   2280
-      TabIndex        =   17
-      Top             =   6600
-      Width           =   1335
-   End
-   Begin VB.CommandButton cmdDisplayMembers 
-      Caption         =   "Display Members"
-      Height          =   735
-      Left            =   240
-      TabIndex        =   16
-      Top             =   6600
-      Width           =   1575
-   End
-   Begin VB.CommandButton cmdOK 
-      Caption         =   "Add Member"
-      Height          =   735
-      Left            =   5880
-      TabIndex        =   15
-      Top             =   6360
-      Width           =   1935
-   End
    Begin VB.Frame fraDelete 
       Height          =   1935
-      Left            =   3600
-      TabIndex        =   12
+      Left            =   5760
+      TabIndex        =   15
       Top             =   2160
       Width           =   4695
-      Begin VB.TextBox txtMembershipIDDelete 
+      Begin VB.TextBox txtMemberIDDelete 
          Height          =   285
          Left            =   2040
-         TabIndex        =   14
+         TabIndex        =   16
          Top             =   360
          Width           =   1935
       End
@@ -51,10 +26,35 @@ Begin VB.Form frmMembers
          Caption         =   "Membership Number"
          Height          =   375
          Left            =   240
-         TabIndex        =   13
+         TabIndex        =   17
          Top             =   360
          Width           =   1455
       End
+   End
+   Begin VB.CommandButton cmdOK 
+      Caption         =   "Add Member"
+      Height          =   735
+      Left            =   8280
+      TabIndex        =   14
+      Top             =   6120
+      Width           =   1935
+   End
+   Begin VB.CommandButton cmdPrintMembers 
+      Caption         =   "Print Membership List"
+      Enabled         =   0   'False
+      Height          =   735
+      Left            =   4440
+      TabIndex        =   13
+      Top             =   6360
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdDisplayMembers 
+      Caption         =   "Display Members"
+      Height          =   735
+      Left            =   600
+      TabIndex        =   12
+      Top             =   6600
+      Width           =   1575
    End
    Begin VB.ListBox lstMembers 
       BeginProperty Font 
@@ -67,85 +67,85 @@ Begin VB.Form frmMembers
          Strikethrough   =   0   'False
       EndProperty
       Height          =   4380
-      Left            =   240
+      Left            =   0
       Sorted          =   -1  'True
       TabIndex        =   11
-      Top             =   1680
-      Width           =   3135
+      Top             =   1320
+      Width           =   5175
    End
    Begin VB.Frame fraAdd 
       Height          =   3615
-      Left            =   3600
+      Left            =   5760
       TabIndex        =   2
       Top             =   2040
       Width           =   4575
+      Begin VB.TextBox txtSurname 
+         Height          =   285
+         Left            =   1800
+         TabIndex        =   6
+         Top             =   600
+         Width           =   1455
+      End
+      Begin VB.TextBox txtFirstName 
+         Height          =   285
+         Left            =   1800
+         TabIndex        =   5
+         Top             =   1200
+         Width           =   1455
+      End
+      Begin VB.TextBox txtMemberIDAdd 
+         Height          =   285
+         Left            =   1800
+         TabIndex        =   4
+         Top             =   1920
+         Width           =   1695
+      End
       Begin VB.ListBox lstCategory 
          Height          =   450
          ItemData        =   "frmMembers.frx":0000
          Left            =   1920
          List            =   "frmMembers.frx":000A
-         TabIndex        =   10
+         TabIndex        =   3
          Top             =   2520
          Width           =   1695
       End
-      Begin VB.TextBox txtMemberIDAdd 
-         Height          =   285
-         Left            =   1800
-         TabIndex        =   9
-         Top             =   1920
-         Width           =   1695
-      End
-      Begin VB.TextBox txtFirstName 
-         Height          =   285
-         Left            =   1800
-         TabIndex        =   8
-         Top             =   1200
-         Width           =   1455
-      End
-      Begin VB.TextBox txtSurname 
-         Height          =   285
-         Left            =   1800
-         TabIndex        =   7
+      Begin VB.Label Label1 
+         Caption         =   "Surname"
+         Height          =   375
+         Left            =   120
+         TabIndex        =   10
          Top             =   600
+         Width           =   1215
+      End
+      Begin VB.Label Label2 
+         Caption         =   "First Name"
+         Height          =   375
+         Left            =   120
+         TabIndex        =   9
+         Top             =   1200
+         Width           =   1095
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Membership Number"
+         Height          =   375
+         Left            =   120
+         TabIndex        =   8
+         Top             =   1920
          Width           =   1455
       End
       Begin VB.Label Label4 
          Caption         =   "Membership Category"
          Height          =   375
          Left            =   120
-         TabIndex        =   6
+         TabIndex        =   7
          Top             =   2520
          Width           =   1695
-      End
-      Begin VB.Label Label3 
-         Caption         =   "Membership Number"
-         Height          =   375
-         Left            =   120
-         TabIndex        =   5
-         Top             =   1920
-         Width           =   1455
-      End
-      Begin VB.Label Label2 
-         Caption         =   "First Name"
-         Height          =   375
-         Left            =   120
-         TabIndex        =   4
-         Top             =   1200
-         Width           =   1095
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Surname"
-         Height          =   375
-         Left            =   120
-         TabIndex        =   3
-         Top             =   600
-         Width           =   1215
       End
    End
    Begin VB.OptionButton optDelete 
       Caption         =   "Delete Member"
       Height          =   375
-      Left            =   4920
+      Left            =   5640
       TabIndex        =   1
       Top             =   840
       Width           =   1455
@@ -153,7 +153,7 @@ Begin VB.Form frmMembers
    Begin VB.OptionButton optAdd 
       Caption         =   "Add Member"
       Height          =   375
-      Left            =   3240
+      Left            =   3600
       TabIndex        =   0
       Top             =   840
       Value           =   -1  'True
@@ -165,6 +165,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Sub cmdDisplayMembers_Click()
 'If selected it will display the surname, first name, membership number and category of memberhsip i.e. Senior or Junior of all the members in a list box'
 
@@ -172,6 +173,10 @@ Dim FullName As String
 Dim Category As String
 Dim MemberID As String
 Dim OneMember As MemberType
+
+Dim FileName As String
+
+FileName = App.Path & "\Members.dat"
 
 lstMembers.Clear
 
@@ -212,7 +217,7 @@ Dim Response 'Reply when asked to confirm the deletion'
 Dim OneMember As MemberType
 
 If cmdOK.Caption = "Add Member" Then 'A new member is added;
-If Len(txtMemberIDDAdd.Text) = 6 Then 'An ID has to be 6 characters long'
+If Len(txtMemberIDAdd.Text) = 6 Then 'An ID has to be 6 characters long'
 MemberID = txtMemberIDAdd.Text
 Duplicate = CheckDuplicateMemberID(MemberID) 'Program checks to see if that membership number is already being used'
 
@@ -248,9 +253,7 @@ Else
 MsgBox ("You must enter a membership number with six characters")
 txtMemberIDAdd.SetFocus
 End If
-
 Else
-
 MemberID = txtMemberIDDelete.Text
 If MemberID = "" Then 'A membership number has not been entered'
 MsgBox ("You have not entered a membership number")
@@ -329,6 +332,11 @@ Printer.EndDoc
 
 End Sub
 
+
+
+
+
+
 Private Sub Form_Load()
 
 Dim FileName As String
@@ -339,25 +347,33 @@ End Sub
 
 Private Sub optAdd_Click()
 
-fraDelete.Visible = False 'Hides the frame with controls for deleting a member'
-fraAdd.Visible = True 'Shows the frame with controls for adding a member'
-cmdOK.Caption = "Add Member" 'Caption for command button changes to Add Member'
+fraAdd.Visible = True
+fraDelete.Visible = False
+
+cmdOK.Caption = "Add Member"
+
 End Sub
 
 Private Sub optDelete_Click()
 
-fraAdd.Visible = False 'Hides the frame with controls for adding a member'
-fraDelete.Visible = True 'Shows the frame with controls for deleting a member'
-cmdOK.Caption = "Delete Member" 'Caption for command button changes to Delete Member'
+fraDelete.Visible = True
+fraAdd.Visible = False
+
+
+cmdOK.Caption = "Delete Member"
 
 End Sub
+
+
 
 Private Function CheckDuplicateMemberID(ByVal MemberID As String) As Boolean
 'Returns as true if the MemberID requested is already in use, otherwise comes back false'
 
 Dim Found As Boolean
 Dim OneMember As MemberType
+Dim FileName As String
 
+FileName = App.Path & "\Members.dat"
 Found = False
 Open FileName For Random As #1 Len = Len(OneMember)
 Do While (Not EOF(1)) And (Found = False) 'This will keep looping until a duplicate MemberID is found or the end of the file has been reached'
@@ -416,7 +432,9 @@ Private Sub AddMember(ByRef OneMember As MemberType)
 
 Dim NumberOfRecords As Integer
 Dim DeletedRecordNumber As Integer
+Dim FileName As String
 
+FileName = App.Path & "\Members.dat"
 DeletedRecordNumber = FindDeletedNumber
 Open FileName For Random As #1 Len = Len(OneMember)
 If DeletedRecordNumber <> 0 Then 'There is a space available from a deleted record'
@@ -427,7 +445,7 @@ NumberOfRecords = LOF(1) / Len(OneMember) 'Calculates number of records'
 Put #1, NumberOfRecords + 1, OneMember 'Creates a new one'
 End If
 Close #1
-Call cmdDisplayMember_click 'This is called so the new member can appear in the list box'
+Call cmdDisplayMembers_Click 'This is called so the new member can appear in the list box'
 
 
 End Sub
@@ -440,7 +458,9 @@ Private Function DeleteMember(ByVal MemberID As String) As Boolean
 Dim OneMember As MemberType
 Dim RecordNumber As Integer
 Dim Found As Boolean
+Dim FileName As String
 
+FileName = App.Path & "\Members.dat"
 RecordNumber = 0
 Found = False
 Open FileName For Random As #1 Len = Len(OneMember)
@@ -463,7 +483,7 @@ DeleteMember = True 'A record was deleted'
 End If
 Put #1, RecordNumber, OneMember 'Writes record to the file'
 Close #1
-Call cmdDisplayMember_click 'This is called so that the deleted member is removed from the list'
+Call cmdDisplayMembers_Click 'This is called so that the deleted member is removed from the list'
 
 
 

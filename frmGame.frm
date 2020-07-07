@@ -1,199 +1,237 @@
 VERSION 5.00
 Begin VB.Form frmGame 
-   Caption         =   "Lewis' Football- Start and finish a game"
-   ClientHeight    =   8940
+   Caption         =   "Form2"
+   ClientHeight    =   9120
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   8610
-   LinkTopic       =   "Form1"
-   ScaleHeight     =   8940
-   ScaleWidth      =   8610
+   ClientWidth     =   10845
+   LinkTopic       =   "Form2"
+   ScaleHeight     =   9120
+   ScaleWidth      =   10845
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton cmdOK 
       Caption         =   "Start Game"
       Height          =   735
-      Left            =   5520
-      TabIndex        =   31
-      Top             =   7320
+      Left            =   5880
+      TabIndex        =   30
+      Top             =   6840
       Width           =   1455
    End
    Begin VB.Frame fraFinish 
       Height          =   4935
-      Left            =   1080
-      TabIndex        =   13
-      Top             =   1560
+      Left            =   840
+      TabIndex        =   12
+      Top             =   1440
       Width           =   6135
-      Begin VB.TextBox txtMinutes 
-         Height          =   375
-         Left            =   4320
-         TabIndex        =   29
-         Top             =   2880
-         Width           =   735
-      End
-      Begin VB.TextBox txtHours 
-         Height          =   375
-         Left            =   2400
-         TabIndex        =   27
-         Top             =   2880
-         Width           =   615
-      End
-      Begin VB.TextBox txtCostOfGame 
-         Height          =   375
+      Begin VB.ComboBox cboPitchNumberFinish 
+         Height          =   315
+         ItemData        =   "frmGame.frx":0000
          Left            =   2520
-         TabIndex        =   26
-         Top             =   3360
-         Width           =   1575
-      End
-      Begin VB.TextBox txtFinishTime 
-         Height          =   405
-         Left            =   2520
-         TabIndex        =   25
-         Top             =   2400
-         Width           =   1455
-      End
-      Begin VB.TextBox txtStartTimeFinish 
-         Height          =   375
-         Left            =   2520
-         TabIndex        =   24
-         Top             =   1920
-         Width           =   1455
-      End
-      Begin VB.TextBox txtCategoryFinish 
-         Height          =   405
-         Left            =   2520
-         TabIndex        =   23
-         Top             =   1440
-         Width           =   1575
+         List            =   "frmGame.frx":0013
+         Style           =   2  'Dropdown List
+         TabIndex        =   20
+         Top             =   480
+         Width           =   1215
       End
       Begin VB.TextBox txtMemberNameFinish 
          Height          =   375
          Left            =   2520
-         TabIndex        =   22
-         Top             =   960
-         Width           =   1575
-      End
-      Begin VB.ComboBox cboPitchNumberFinish 
-         Height          =   315
-         Left            =   2520
-         Style           =   2  'Dropdown List
-         TabIndex        =   21
-         Top             =   480
-         Width           =   1215
-      End
-      Begin VB.Label Label14 
-         Caption         =   "Minutes"
-         Height          =   375
-         Left            =   5160
-         TabIndex        =   30
-         Top             =   2880
-         Width           =   855
-      End
-      Begin VB.Label Label13 
-         Caption         =   "Hours"
-         Height          =   375
-         Left            =   3240
-         TabIndex        =   28
-         Top             =   2880
-         Width           =   735
-      End
-      Begin VB.Label Label12 
-         Caption         =   "Cost Of Game"
-         Height          =   735
-         Left            =   360
-         TabIndex        =   20
-         Top             =   3480
-         Width           =   1095
-      End
-      Begin VB.Label Label11 
-         Caption         =   "Playing Time"
-         Height          =   375
-         Left            =   360
          TabIndex        =   19
-         Top             =   3000
-         Width           =   975
-      End
-      Begin VB.Label Label10 
-         Caption         =   "Finish Time"
-         Height          =   495
-         Left            =   360
-         TabIndex        =   18
-         Top             =   2520
-         Width           =   855
-      End
-      Begin VB.Label Label9 
-         Caption         =   "Start Time"
-         Height          =   375
-         Left            =   360
-         TabIndex        =   17
-         Top             =   2040
-         Width           =   735
-      End
-      Begin VB.Label Label8 
-         Caption         =   "Membershp Category"
-         Height          =   495
-         Left            =   240
-         TabIndex        =   16
-         Top             =   1560
+         Top             =   960
          Width           =   1575
       End
-      Begin VB.Label Label7 
-         Caption         =   "Member's Name"
+      Begin VB.TextBox txtCategoryFinish 
+         Height          =   405
+         Left            =   2520
+         TabIndex        =   18
+         Top             =   1440
+         Width           =   1575
+      End
+      Begin VB.TextBox txtStartTimeFinish 
          Height          =   375
-         Left            =   360
+         Left            =   2520
+         TabIndex        =   17
+         Top             =   1920
+         Width           =   1455
+      End
+      Begin VB.TextBox txtFinishTime 
+         Height          =   405
+         Left            =   2520
+         TabIndex        =   16
+         Top             =   2400
+         Width           =   1455
+      End
+      Begin VB.TextBox txtCost 
+         Height          =   375
+         Left            =   2520
          TabIndex        =   15
-         Top             =   960
-         Width           =   1215
+         Top             =   3360
+         Width           =   1575
+      End
+      Begin VB.TextBox txtHours 
+         Height          =   375
+         Left            =   2400
+         TabIndex        =   14
+         Top             =   2880
+         Width           =   615
+      End
+      Begin VB.TextBox txtMinutes 
+         Height          =   375
+         Left            =   4320
+         TabIndex        =   13
+         Top             =   2880
+         Width           =   735
       End
       Begin VB.Label label6 
          Caption         =   "Pitch Number"
          Height          =   375
          Left            =   360
-         TabIndex        =   14
+         TabIndex        =   29
          Top             =   480
          Width           =   1215
       End
-   End
-   Begin VB.TextBox txtCategoryStart 
-      Height          =   375
-      Left            =   3720
-      TabIndex        =   10
-      Top             =   3000
-      Width           =   1215
+      Begin VB.Label Label7 
+         Caption         =   "Member's Name"
+         Height          =   375
+         Left            =   360
+         TabIndex        =   28
+         Top             =   960
+         Width           =   1215
+      End
+      Begin VB.Label Label8 
+         Caption         =   "Membershp Category"
+         Height          =   495
+         Left            =   240
+         TabIndex        =   27
+         Top             =   1560
+         Width           =   1575
+      End
+      Begin VB.Label Label9 
+         Caption         =   "Start Time"
+         Height          =   375
+         Left            =   360
+         TabIndex        =   26
+         Top             =   2040
+         Width           =   735
+      End
+      Begin VB.Label Label10 
+         Caption         =   "Finish Time"
+         Height          =   495
+         Left            =   360
+         TabIndex        =   25
+         Top             =   2520
+         Width           =   855
+      End
+      Begin VB.Label Label11 
+         Caption         =   "Playing Time"
+         Height          =   375
+         Left            =   360
+         TabIndex        =   24
+         Top             =   3000
+         Width           =   975
+      End
+      Begin VB.Label Label12 
+         Caption         =   "Cost Of Game"
+         Height          =   735
+         Left            =   360
+         TabIndex        =   23
+         Top             =   3480
+         Width           =   1095
+      End
+      Begin VB.Label Label13 
+         Caption         =   "Hours"
+         Height          =   375
+         Left            =   3240
+         TabIndex        =   22
+         Top             =   2880
+         Width           =   735
+      End
+      Begin VB.Label Label14 
+         Caption         =   "Minutes"
+         Height          =   375
+         Left            =   5160
+         TabIndex        =   21
+         Top             =   2880
+         Width           =   855
+      End
    End
    Begin VB.Frame fraStart 
       Height          =   3495
-      Left            =   1080
+      Left            =   840
       TabIndex        =   2
-      Top             =   1560
+      Top             =   1320
       Width           =   6015
-      Begin VB.TextBox txtStartTimeStart 
-         Height          =   375
+      Begin VB.TextBox txtCategoryStart 
+         Height          =   405
          Left            =   2640
-         TabIndex        =   12
-         Top             =   2520
-         Width           =   1095
-      End
-      Begin VB.ComboBox cboPitchNumberStart 
-         Height          =   315
-         Left            =   2640
-         Style           =   2  'Dropdown List
-         TabIndex        =   11
-         Top             =   1920
-         Width           =   1095
-      End
-      Begin VB.TextBox txtMemberNameStart 
-         Height          =   375
-         Left            =   2640
-         TabIndex        =   9
-         Top             =   960
+         TabIndex        =   31
+         Top             =   1440
          Width           =   1095
       End
       Begin VB.TextBox txtMemberIDStart 
          Height          =   285
          Left            =   2640
-         TabIndex        =   8
+         TabIndex        =   6
          Top             =   480
          Width           =   1095
+      End
+      Begin VB.TextBox txtMemberNameStart 
+         Height          =   375
+         Left            =   2640
+         TabIndex        =   5
+         Top             =   960
+         Width           =   1095
+      End
+      Begin VB.ComboBox cboPitchNumberStart 
+         Height          =   315
+         ItemData        =   "frmGame.frx":0026
+         Left            =   2640
+         List            =   "frmGame.frx":0066
+         Style           =   2  'Dropdown List
+         TabIndex        =   4
+         Top             =   1920
+         Width           =   1095
+      End
+      Begin VB.TextBox txtStartTimeStart 
+         Height          =   375
+         Left            =   2640
+         TabIndex        =   3
+         Top             =   2520
+         Width           =   1095
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Membership Number"
+         Height          =   375
+         Left            =   480
+         TabIndex        =   11
+         Top             =   480
+         Width           =   1455
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Member's Name"
+         Enabled         =   0   'False
+         Height          =   495
+         Left            =   480
+         TabIndex        =   10
+         Top             =   960
+         Width           =   1335
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Membership Category"
+         Enabled         =   0   'False
+         Height          =   375
+         Left            =   360
+         TabIndex        =   9
+         Top             =   1440
+         Width           =   1695
+      End
+      Begin VB.Label Label4 
+         Caption         =   "Pitch Number"
+         Height          =   375
+         Left            =   360
+         TabIndex        =   8
+         Top             =   1920
+         Width           =   1215
       End
       Begin VB.Label Label5 
          Caption         =   "Start Time"
@@ -203,40 +241,6 @@ Begin VB.Form frmGame
          TabIndex        =   7
          Top             =   2520
          Width           =   735
-      End
-      Begin VB.Label Label4 
-         Caption         =   "Pitch Number"
-         Height          =   375
-         Left            =   360
-         TabIndex        =   6
-         Top             =   1920
-         Width           =   1215
-      End
-      Begin VB.Label Label3 
-         Caption         =   "Membership Category"
-         Enabled         =   0   'False
-         Height          =   375
-         Left            =   360
-         TabIndex        =   5
-         Top             =   1440
-         Width           =   1695
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Member's Name"
-         Enabled         =   0   'False
-         Height          =   495
-         Left            =   480
-         TabIndex        =   4
-         Top             =   960
-         Width           =   1335
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Membership Number"
-         Height          =   375
-         Left            =   480
-         TabIndex        =   3
-         Top             =   480
-         Width           =   1455
       End
    End
    Begin VB.OptionButton optFinish 
@@ -251,9 +255,9 @@ Begin VB.Form frmGame
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4560
+      Left            =   3720
       TabIndex        =   1
-      Top             =   960
+      Top             =   600
       Width           =   1095
    End
    Begin VB.OptionButton optStart 
@@ -268,9 +272,9 @@ Begin VB.Form frmGame
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   1440
+      Left            =   1080
       TabIndex        =   0
-      Top             =   960
+      Top             =   600
       Value           =   -1  'True
       Width           =   975
    End
@@ -280,6 +284,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 
 
 
@@ -297,6 +302,9 @@ Dim OneGame As GameType
 Dim OneMember As MemberType
 Dim MembershipNumber As String
 Dim Category As String
+Dim CostofGame As Currency
+Dim FinishTime As String
+
 
 Pitch = cboPitchNumberFinish.Text
 OneGame = GetRecordFromCurrentGamesFile(Pitch) 'Program retrives details of the game that has just finished form the current games file'
@@ -315,9 +323,8 @@ End If
 
 FinishTime = Time()
 txtMemberNameFinish.Text = RTrim(OneMember.FirstName) & " " & UCase(OneMember.Surname)
-txtStartTimeFinish.Text = basTimeFunctions.DisplayTime(OneGame.StartTime)
-txtFinishTime.Text = basTimeFunctions.DisplayTime(FinishTime)
-
+txtStartTimeFinish.Text = basTimeFunctions.ShortenTime(FinishTime)
+txtFinishTime.Text = basTimeFunctions.NumberOfMinutes(FinishTime, OneGame.StartTime)
 MinutesPlayed = basTimeFunctions.NumberOfMinutes(FinishTime, OneGame.StartTime)
 
 If MinutesPlayed >= 60 Then 'Program calculates the number of hours played'
@@ -330,15 +337,12 @@ txtHours.Text = Hours
 txtMinutes.Text = Minutes
 Category = txtCategoryFinish.Text
 
-CostOfGame = CalculateCostOfGame(MinutesPlayed, Category)
-txtCost.Text = Format(CostOfGame, "Currency") 'Program calculates the cost of the game and then displays it'
+CostofGame = CalculateCostofGame(MinutesPlayed, Category)
+txtCost.Text = Format(CostofGame, "Currency") 'Program calculates the cost of the game and then displays it'
 
-Option Explicit
-'Global Variables'
-Dim FinishTime As String
-Dim CostOfGame As String
 
 End Sub
+
 
 Private Sub cmdOK_Click()
 'Completes the processing of a new game or finished game'
@@ -377,29 +381,30 @@ Else
 MsgBox "You must select a pitch number"
 
 End If
-
+End If
 Call ListPitchesAvailable 'Called to put pitch numbers in combo box'
 End Sub
 
+
 Private Sub optFinish_Click()
+fraFinish.Visible = True
+fraStart.Visible = False
 
-fraFinish.Visible = True  'Shows frame with controls for finishing a game'
-fraStart.Visible = False 'Hides frame with controls for starting a game'
- 
-cmdOK.Caption = "Finish Game" 'The caption for command box chnages to Finish Game'
+cmdOK.Caption = "Finish Game"
 
-Call ListPitchesAvailable 'Call subroutine of pitches available'
+Call ListPitchesAvailable
 End Sub
 
 Private Sub optStart_Click()
 
-fraStart.Visible = True 'Shows frame with controls for starting a game'
-fraFinish.Visible = False 'Shows frame with controls for finishing a game'
-cmdOK.Caption = "Start Game" 'The caption for command box changes to Start Game'
+fraStart.Visible = True
+fraFinish.Visible = False
 
-Call ListPitchesAvailable 'Calls subroutine of pitches available'
+cmdOK.Caption = "Start Game"
+
+Call ListPitchesAvailable
+
 End Sub
-
 Private Function FindMemberByMemberID(ByVal MemberID As String) As Integer
 
 'This function searches the members file for the membership number and MembeID'
@@ -466,13 +471,13 @@ MsgBox "Membership Number" & MemberID & "does not exist"
 txtMemberIDStart.SetFocus
 Else 'The membership number does exist'
 
-OneMember = GetMemberRecordNumber(RecordNumber) 'Program retrieves the record from the file'
+OneMember = GetMemberByRecordNumber(RecordNumber) 'Program retrieves the record from the file'
 txtMemberNameStart.Text = RTrim(OneMember.FirstName) & " " & UCase(OneMember.Surname)
 
 cboPitchNumberStart.Enabled = True 'Program will now allow the user to select a pitch number to book'
 
 If OneMember.Cateogry = "S" Then
-txtCateoryStart.Text = "Senior" 'They are a senior member'
+txtCategoryStart.Text = "Senior" 'They are a senior member'
 Else
 txtCategoryStart.Text = "Junior" 'They are a junior member'
 
@@ -482,7 +487,7 @@ End If
 
 End Sub
 
-Private Sub ListPitchesAvailable()
+Public Sub ListPitchesAvailable()
 'The combo boxes are filled with the appropriate pitch numbers'
 'If a game is being started then only green pitches are listed'
 'If finishing a game then only red pitches are listed'
@@ -503,7 +508,7 @@ Next Index
 
 Else 'A game is now finished'
 
-cbopPitchNumberFinish.Clear
+cboPitchNumberFinish.Clear
 
 For Index = 1 To MaxPitches
 
@@ -513,6 +518,7 @@ cboPitchNumberFinish.AddItem Index
 End If
 Next Index
 
+End If
 
 End Sub
 
@@ -595,6 +601,7 @@ Private Function GetMemberByMemberID(ByVal MemberID As String) As MemberType
 Dim Found As Boolean
 Dim OneMember As MemberType
 Dim FileName As String
+Dim RecordNumber As Integer
 
 FileName = App.Path & "\Members.dat"
 RecordNumber = 0
@@ -617,21 +624,21 @@ Close #1
 
 End Function
 
-Private Function CalculateCostOfGame(ByVal MinutesPlayed As Integer, ByVal Category As String) As Currency
+Private Function CalculateCostofGame(ByVal MinutesPlayed As Integer, ByVal Category As String) As Currency
 'Calculates the cost of one game'
 
 If Category = "Senior" Then
-CaluclateCostOfGame = (SeniorRate * MinutesPlayed) / 100 'Cost for a senior member for one game'
+CostofGame = (SeniorRate * MinutesPlayed) / 100 'Cost for a senior member for one game'
 
 Else
-CalculateCostOfGame = (JuniorRate * MinutesPlayed) / 100 'Cost for a junior member for one game'
+CalculateCostofGame = (JuniorRate * MinutesPlayed) / 100 'Cost for a junior member for one game'
 
 End If
 
 
 End Function
 
-Private Sub ResetGaneInCurrentGamesFile(ByVal PitchNumber As Integer)
+Private Sub ResetGameInCurrentGamesFile(ByVal PitchNumber As Integer)
 'Updates the record in the current games file for PitchNumber by setting the occupied field to "N"'
 
 Dim FileName As String
@@ -662,8 +669,8 @@ FileName = App.Path & "\DailyGames.dat"
 
 OneFinishedGame.PitchID = PitchNumber
 OneFinishedGame.StartTime = StartTime
-OneFinishedGame.FinishTime = FinishTime 'Uses the two global variables'
-OneFinishedGame.Cost = CostOfGame
+OneFinishedGame.FinishTime = FinishTime  'Uses the two global variables'
+OneFinishedGame.Cost = CostofGame
 
 Open FileName For Random As #1 Len = Len(OneFinishedGame)
 
